@@ -2,6 +2,20 @@
 
 课程团队协作仓库。
 
+## 项目结构
+
+```text
+teamwork/
+├── frontend/      # 前端项目
+├── backend/       # 后端项目
+├── data/          # 数据库初始化、种子数据和样例数据
+├── docs/          # 需求、设计、报告和 vibe logs
+├── tests/         # API、前端和验收测试
+├── defense/       # 答辩材料、演示脚本和截图
+├── scripts/       # 项目启动、安装和数据库重置脚本
+└── .github/       # Issue、PR 和 CI 配置
+```
+
 ## CampusProject 提交流程
 
 本仓库使用 `main` 作为稳定主分支。产品、前端、后端的工作都应先在各自任务分支完成，再通过提交记录或 Pull Request 合并到 `main`。不要直接把多个无关改动混在一次提交里。
@@ -13,9 +27,10 @@
 产品负责说明“要做什么、为什么做、做到什么程度算完成”。
 
 - 需求说明、用户故事、验收标准、演示脚本放在：
-  - `mainbranchCampusProject/docs/`
-  - `mainbranchCampusProject/prompts/`
-  - `mainbranchCampusProject/vibe/`
+  - `docs/requirements/`
+  - `docs/design/`
+  - `docs/vibe-logs/`
+  - `defense/`
 - 在前端或后端开始实现前，需要先明确：
   - 目标用户是谁
   - 需要哪些页面或接口
@@ -27,7 +42,7 @@
 
 前端负责实现用户看到和操作的页面。
 
-- 前端代码放在 `mainbranchCampusProject/frontend/`。
+- 前端代码放在 `frontend/`。
 - 页面实现要对应产品需求，不单独凭感觉改交互。
 - 提交前端内容时，需要说明：
   - 改了哪些页面或组件
@@ -39,12 +54,12 @@
 
 后端负责实现 API、数据处理和服务逻辑。
 
-- 后端代码放在 `mainbranchCampusProject/backend/`。
-- 数据库结构和种子数据放在 `mainbranchCampusProject/database/`。
+- 后端代码放在 `backend/`。
+- 数据库结构和种子数据放在 `data/`。
 - 提交后端内容时，需要说明：
   - 新增或修改了哪些接口
   - 请求参数和响应格式是什么
-  - 是否修改了 `schema.sql`、`seed.sql` 或 `app.db`
+  - 是否修改了 `data/init.sql` 或 `data/seed.sql`
   - 如何测试接口是否可用
 
 ### 2. 分支命名方式
@@ -165,4 +180,4 @@ git push origin main
 - 提交信息清楚。
 - PR 或提交说明写明了产品、前端或后端影响。
 - 需要截图、接口示例、测试步骤时已经补充。
-- 数据库变化已经同步到 `schema.sql`、`seed.sql` 或 `app.db`。
+- 数据库变化已经同步到 `data/init.sql` 或 `data/seed.sql`。
