@@ -1,8 +1,46 @@
-# Teamwork
+# InnerGarden
 
 课程团队协作仓库。
 
+## 项目流程图
+```mermaid
+flowchart TD
+
+A[前端 frontend]
+B[接口层 api]
+C[业务逻辑层 service] 
+D[数据层 SQLite]
+E[外部服务层 AI/语音 api]
+
+A --> B
+B --> C
+C --> D
+C --> E
+```
+### 具体示例
+```mermaid
+flowchart LR
+
+A[用户发送 今天考试考砸了，很难过]
+B[前端发送 POST /api/v1/entries]
+C[后端校验登录态/输入内容]
+D[保存原文，日记正文，情绪结果]
+E[返回日记内容/情绪标签]
+F[前端显示日记卡片]
+G[统计接口，读取历史数据]
+H[前端生成周情绪趋势图]
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
+```
+
 ## 项目结构
+
 
 ```text
 teamwork/
